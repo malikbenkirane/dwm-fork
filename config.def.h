@@ -59,6 +59,8 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { "st", NULL };
 static const char *roficmd[] = { "/home/void/.config/myrofi", "run", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -99,6 +101,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,                   XK_q,      quit,           {0} },
         { MODKEY,                             XK_o,      winview,        {0} },
         { MODKEY,                             XK_n,      nametag,        {0} },
+        { MODKEY,                             XK_grave,  togglescratch,  {.v = scratchpadcmd} },
 };
 
 /* button definitions */
