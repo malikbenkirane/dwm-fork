@@ -4,6 +4,17 @@
 static const char *fonts[] = {
         "Fixed:size=9"
 };
+
+#define NUMCOLORS 4
+static const char colors[NUMCOLORS][MAXCOLORS][8] = {
+    // border, foreground, background
+    { "#000033", "#dddddd", "#000033" }, //normal
+    { "#000088", "#ffffff", "#000088" }, //selected
+    { "#ff0000", "#000000", "#ffff00" }, //urgent/warning
+    { "#ff0000", "#ffffff", "#ff0000" }, //error
+};
+
+
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
@@ -69,6 +80,7 @@ static Key keys[] = {
 	{ MODKEY,                             XK_b,      togglebar,      {0} },
 	{ MODKEY,                             XK_j,      focusstack,     {.i = +1 } },
         { MODKEY,                             XK_Tab,    focusstack,     {.i = +1 } },
+        { MODKEY|ShiftMask,                   XK_Tab,    focusstack,     {.i = -1 } },
 	{ MODKEY,                             XK_k,      focusstack,     {.i = -1 } },
         { MODKEY|ControlMask,                 XK_j,      pushdown,       {0} },
         { MODKEY|ControlMask,                 XK_k,      pushup,         {0} },
