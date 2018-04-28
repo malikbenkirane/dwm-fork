@@ -2,7 +2,7 @@
 
 /* appearance */
 static const char *fonts[] = {
-        "Fixed:size=9"
+        "Fixed:size=11"
 };
 
 #define NUMCOLORS 4
